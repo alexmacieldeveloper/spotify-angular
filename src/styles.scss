@@ -4,12 +4,20 @@
 html, body {
     margin: 0;
     padding: 0;
-
+    background-color: $cor-fundo;
 }
 
 
 * {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
-    background-color: $cor-fundo;
+}
+
+.flex {
+    display: flex;
+
+    &-center {
+        justify-content: center;
+        align-items: center;
+    }
 }
