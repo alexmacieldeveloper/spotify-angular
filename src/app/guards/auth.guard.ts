@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Route, UrlSegment, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { SpotifyService } from '../services/spotify.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanLoad {
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private spotifyService: SpotifyService
+  ) {
 
   }
   canLoad(
@@ -19,7 +22,14 @@ export class AuthGuard implements CanLoad {
         this.notAuthenticated();
       }
 
-      return true;
+      return new Promise((res) => {
+        const userCreated = this.spotifyService.initializeUser();
+
+        if (userCreated)
+          res(true);
+        else 
+          res(this.notAuthenticated());
+      })
   }
 
   notAuthenticated() {
