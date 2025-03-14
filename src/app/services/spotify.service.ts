@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import Spotify from 'spotify-web-api-js';
 import { SpotifyConfiguration } from 'src/environments/environment';
-import Spotify  from 'spotify-web-api-js';
-import { IUser } from '../interfaces/IUser';
 import { SpotifyUserForUser } from '../Common/spotifyHelper';
+import { IUser } from '../interfaces/IUser';
 
 @Injectable({
   providedIn: 'root'
