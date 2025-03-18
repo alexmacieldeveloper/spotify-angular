@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PlayerComponent } from './player.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LeftSideMenuComponent } from 'src/app/components/left-side-menu/left-side-menu.component';
+import { PlayerComponent } from './player.component';
 import { PlayerRotas } from './player.routes';
 
 @NgModule({
     declarations: [
-    PlayerComponent
+    PlayerComponent,
+    LeftSideMenuComponent
   ],
     imports: [
         CommonModule,
