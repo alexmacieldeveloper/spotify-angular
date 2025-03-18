@@ -43,6 +43,22 @@ $m-between-menus: 10px;
                     margin-bottom: $m-between-menus;
                 }
             }
+
+            .playlist-title {
+                margin: 10px 0;
+                align-self: flex-start;
+                font-weight: 700;
+                font-size: .7rem;
+                color: $preto-transparent-30;
+            }
+
+            .playlist-scroll {
+                width: 100%;
+
+                * {
+                    margin-bottom: $m-between-menus;
+                }
+            }
         }
     }
 }
