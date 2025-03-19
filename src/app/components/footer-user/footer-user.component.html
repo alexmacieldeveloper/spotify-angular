@@ -1,0 +1,8 @@
+<div class="flex">
+    <img [src]="user.imageUrl" alt="user name" srcset="">
+    <span>{{ user.name }}</span>
+    <fa-icon 
+        class="icon"
+        [icon]="exitIcon"
+        (click)="logout()"></fa-icon>
+</div>
