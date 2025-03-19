@@ -16,7 +16,7 @@
     <div class="menu-container flex">
         <span class="playlist-title">PLAYLISTS</span>
         <div class="playlist-scroll">
-            <app-button-menu description="Play1" [selected]="menuSelected === 'Play1'" (click)="buttonClick('Play1')">
+            <app-button-menu *ngFor="let playlist of playlists" description="{{playlist.name}}" [selected]="menuSelected === playlist.id" (click)="buttonClick(playlist.id)">
                 <fa-icon [icon]="playlistIcon"></fa-icon>
             </app-button-menu>
         </div>
