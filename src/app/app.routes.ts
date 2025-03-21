@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { AuthGuard } from './guards/auth.guard'
+import { AuthGuard } from './guards/auth.guard';
 
-export const AppRotas: Routes = [
+export const AppRoutes: Routes = [
     {
         path:'',
         redirectTo: 'login',
