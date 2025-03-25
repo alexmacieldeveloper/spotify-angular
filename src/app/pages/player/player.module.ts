@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonMenuComponent } from 'src/app/components/button-menu/button-menu.component';
 import { FooterUserComponent } from 'src/app/components/footer-user/footer-user.component';
 import { LeftSideMenuComponent } from 'src/app/components/left-side-menu/left-side-menu.component';
+import { TopArtistComponent } from 'src/app/components/top-artist/top-artist.component';
 import { HomeComponent } from '../home/home.component';
 import { PlayerComponent } from './player.component';
 import { PlayerRotas } from './player.routes';
@@ -15,7 +16,8 @@ import { PlayerRotas } from './player.routes';
     LeftSideMenuComponent,
     ButtonMenuComponent,
     FooterUserComponent, 
-    HomeComponent
+    HomeComponent,
+    TopArtistComponent
   ],
     imports: [
         CommonModule,
