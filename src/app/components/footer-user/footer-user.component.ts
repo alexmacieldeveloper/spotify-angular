@@ -17,6 +17,7 @@ export class FooterUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.spotifyService.user;
+
   }
 
   logout() {
