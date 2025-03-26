@@ -4,6 +4,7 @@ import Spotify from 'spotify-web-api-js';
 import { SpotifyConfiguration } from 'src/environments/environment';
 import { SpotifyArtistFromArtist, SpotifyPlaylistForPlaylist, SpotifyUserForUser } from '../Common/spotifyHelper';
 import { IArtist } from '../interfaces/IArtist';
+import { IMusic } from '../interfaces/IMusic';
 import { IPlaylist } from '../interfaces/IPlaylist';
 import { IUser } from '../interfaces/IUser';
 
@@ -82,6 +83,13 @@ export class SpotifyService {
 
     return artists.items.map(SpotifyArtistFromArtist);
   }
+
+  async searchMusics(offset=0, limit=50): Promise<IMusic[]>{
+    const musics = await this.spotifyApi.getMySavedTracks({ offset, limit });
+    console.log(musics)
+    return [];
+  }
+
 
   logout() {
     localStorage.clear();

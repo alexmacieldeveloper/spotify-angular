@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IMusic } from 'src/app/interfaces/IMusic';
+import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  musics: IMusic[] = [];
 
-  constructor() { }
+  constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit(): void {
+    this.searchMusicFromUser();
   }
 
+  async searchMusicFromUser(){
+    this.spotifyService.searchMusics();
+  }
 }
