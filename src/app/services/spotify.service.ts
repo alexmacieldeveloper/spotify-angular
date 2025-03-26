@@ -56,12 +56,11 @@ export class SpotifyService {
   }
 
   getTokenUrlCallback() {
-    console.log(window.location.hash)
     if (!window.location.hash)
       return '';
 
     const params = window.location.hash.substring(1).split('&');
-    console.log(params)
+    
     return params[0].split('=')[1];
 
     return '';
@@ -92,7 +91,12 @@ export class SpotifyService {
 
   async playMusic(musicId: string) {
     await this.spotifyApi.queue(musicId);
-    await  this.spotifyApi.skipToNext();
+    await this.spotifyApi.skipToNext();
+  }
+
+  async getCurrentMusic(): Promise<IMusic>{
+    const musicSpotify = await this.spotifyApi.getMyCurrentPlayingTrack();
+    return SpotifyTrackFromMusic(musicSpotify.item);
   }
 
   logout() {
