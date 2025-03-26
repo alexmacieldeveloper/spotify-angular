@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import Spotify from 'spotify-web-api-js';
 import { SpotifyConfiguration } from 'src/environments/environment';
-import { SpotifyArtistFromArtist, SpotifyPlaylistForPlaylist, SpotifyUserForUser } from '../Common/spotifyHelper';
+import { SpotifyArtistFromArtist, SpotifyPlaylistForPlaylist, SpotifyTrackFromMusic, SpotifyUserForUser } from '../Common/spotifyHelper';
 import { IArtist } from '../interfaces/IArtist';
 import { IMusic } from '../interfaces/IMusic';
 import { IPlaylist } from '../interfaces/IPlaylist';
@@ -86,10 +86,14 @@ export class SpotifyService {
 
   async searchMusics(offset=0, limit=50): Promise<IMusic[]>{
     const musics = await this.spotifyApi.getMySavedTracks({ offset, limit });
-    console.log(musics)
-    return [];
+
+    return musics.items.map(x => SpotifyTrackFromMusic(x.track));
   }
 
+  async playMusic(musicId: string) {
+    await this.spotifyApi.queue(musicId);
+    await  this.spotifyApi.skipToNext();
+  }
 
   logout() {
     localStorage.clear();
