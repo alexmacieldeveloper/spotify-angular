@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonMenuComponent } from 'src/app/components/button-menu/button-menu.component';
 import { FooterUserComponent } from 'src/app/components/footer-user/footer-user.component';
 import { LeftSideMenuComponent } from 'src/app/components/left-side-menu/left-side-menu.component';
+import { RecentSearchesComponent } from 'src/app/components/recent-searches/recent-searches.component';
 import { RightPanelComponent } from 'src/app/components/right-panel/right-panel.component';
 import { TopArtistComponent } from 'src/app/components/top-artist/top-artist.component';
 import { HomeComponent } from '../home/home.component';
@@ -19,10 +21,12 @@ import { PlayerRotas } from './player.routes';
     FooterUserComponent, 
     HomeComponent,
     TopArtistComponent,
-    RightPanelComponent
+    RightPanelComponent,
+    RecentSearchesComponent
   ],
     imports: [
         CommonModule,
+        FormsModule,
         FontAwesomeModule,
         RouterModule.forChild(PlayerRotas),
     ],
