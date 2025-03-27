@@ -28,7 +28,7 @@
     span {
       background-color: $branco;
       margin-right: 5px;
-      padding: 5px 10px;
+      padding: 5px 6px;
       color: $preto-transparente-70;
       border: 1px solid $preto-transparent-30;
       margin-top: 10px;
@@ -37,7 +37,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: rgba($cor-primaria, .8);
+        background-color: rgba($cor-primaria, .6);
         color: $branco;
       }
     }
